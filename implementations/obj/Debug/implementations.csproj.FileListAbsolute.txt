@@ -1,0 +1,11 @@
+D:\Projects\TaskShelf\implementations\bin\Debug\implementations.dll
+D:\Projects\TaskShelf\implementations\bin\Debug\implementations.pdb
+D:\Projects\TaskShelf\implementations\bin\Debug\core.dll
+D:\Projects\TaskShelf\implementations\bin\Debug\database.dll
+D:\Projects\TaskShelf\implementations\bin\Debug\EntityFramework.dll
+D:\Projects\TaskShelf\implementations\bin\Debug\core.pdb
+D:\Projects\TaskShelf\implementations\bin\Debug\database.pdb
+D:\Projects\TaskShelf\implementations\bin\Debug\EntityFramework.xml
+D:\Projects\TaskShelf\implementations\obj\Debug\implementations.csprojResolveAssemblyReference.cache
+D:\Projects\TaskShelf\implementations\obj\Debug\implementations.dll
+D:\Projects\TaskShelf\implementations\obj\Debug\implementations.pdb

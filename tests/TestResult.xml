@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Projects\TaskShelf\tests\project1.nunit" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-02" time="19:56:10">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="STACJONARNY" user="mike0_000" user-domain="STACJONARNY" />
+  <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
+  <test-suite type="Project" name="D:\Projects\TaskShelf\tests\project1.nunit" executed="True" result="Failure" success="False" time="0.708" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="D:\Projects\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Failure" success="False" time="0.689" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="0.688" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="DbTest" executed="True" result="Failure" success="False" time="0.686" asserts="0">
+                <results>
+                  <test-case name="tests.DbTest.DatabaseTest" executed="True" result="Error" success="False" time="0.673" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.InvalidOperationException : No connection string named 'Model1' could be found in the application config file.]]></message>
+                      <stack-trace><![CDATA[w System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+w System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+w System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+w System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+w System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+w System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+w System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+w System.Data.Entity.DbSet`1.Add(TEntity entity)
+w tests.DbTest.DatabaseTest() w d:\Projects\TaskShelf\tests\DbTest.cs:wiersz 20
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

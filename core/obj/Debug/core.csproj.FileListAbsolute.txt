@@ -1,0 +1,5 @@
+D:\Projects\TaskShelf\core\bin\Debug\core.dll
+D:\Projects\TaskShelf\core\bin\Debug\core.pdb
+D:\Projects\TaskShelf\core\obj\Debug\core.csprojResolveAssemblyReference.cache
+D:\Projects\TaskShelf\core\obj\Debug\core.dll
+D:\Projects\TaskShelf\core\obj\Debug\core.pdb
