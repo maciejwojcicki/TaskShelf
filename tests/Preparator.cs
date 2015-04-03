@@ -20,18 +20,18 @@ namespace tests
             model.Set<User>().Add(user);
             model.SaveChanges();
 
-            //To jest dobrze tworzy projekt od striny elementu
-            var label1 = new Label();
-            label1.Name = "Test";
-            label1.Project = new Project
-            {
-                Name = "taks"
-            };
-            model.Set<Label>().Add(label1);
-            model.SaveChanges();
+            ////To jest dobrze tworzy projekt od striny elementu
+            //var label1 = new Label();
+            //label1.Name = "Test";
+            //label1.Project = new Project
+            //{
+            //    Name = "taks"
+            //};
+            //model.Set<Label>().Add(label1);
+            //model.SaveChanges();
 
 
-            //To jest dobrze tworzy od strony listy
+            ////To jest dobrze tworzy od strony listy
             //var project = new Project();
             //project.Name = "Testowy";
             //project.Labels = new List<Label>
@@ -43,7 +43,24 @@ namespace tests
             //};
             //model.Set<Project>().Add(project);
             //model.SaveChanges();
-            
+            var project = new Project();
+            project.Name = "test";            
+            model.Set<Project>().Add(project);
+            model.SaveChanges();
+
+            var label = new Label();
+            label.Name = "test";
+            label.Project = project;
+            model.Set<Label>().Add(label);
+            model.SaveChanges();
+
+
+            user.Projects = new List<Project>
+            {
+                project
+            };
+            model.SaveChanges();
+          
         }
 
       
