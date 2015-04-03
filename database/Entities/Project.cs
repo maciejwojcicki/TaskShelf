@@ -13,7 +13,9 @@ namespace database.Entities
 
         public virtual List<User> Users { get; set; }
         public virtual List<Task> Tasks { get; set; }
-
         public virtual List<UserPermission> UserPermissions { get; set; }
+        public virtual List<Label> Labels { get; set; }
+        public virtual List<Group> Groups { get; set; }
+        public virtual List<Module> Modules { get; set; }
     }
 }

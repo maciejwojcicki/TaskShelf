@@ -43,6 +43,15 @@ namespace database
                 .WithRequired(w => w.User)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<User>()
+                .HasMany(h => h.Groups)
+                .WithRequired(w => w.User)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(h => h.TaskComments)
+                .WithRequired(w => w.User)
+                .WillCascadeOnDelete(false);
 
         }
         private void ConfigureProject(DbModelBuilder modelBuilder)
@@ -58,6 +67,20 @@ namespace database
                 .WithRequired(w => w.Project)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Project>()
+                .HasMany(h => h.Labels)
+                .WithRequired(w => w.Project)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Project>()
+                .HasMany(h => h.Groups)
+                .WithRequired(w => w.Project)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Project>()
+                .HasMany(h => h.Modules)
+                .WithRequired(w => w.Project)
+                .WillCascadeOnDelete(false);
         }
 
         private void ConfigurePermission(DbModelBuilder modelBuilder)
@@ -76,6 +99,11 @@ namespace database
                 .WithRequired(w => w.Task)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<database.Entities.Task>()
+                .HasMany(h => h.TaskComments)
+                .WithRequired(w => w.Task)
+                .WillCascadeOnDelete(false);
+
         }
         private void ConfigureCheckList(DbModelBuilder modelBuilder)
         {
@@ -85,14 +113,5 @@ namespace database
                 .WithRequired(w => w.Checklist)
                 .WillCascadeOnDelete(false);
         }
-
-        //private void ConfigureChecklistPoint(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<CheckListPoint>()
-        //        .HasKey(h => h.CheckListPointId)
-        //        .HasRequired(h => h.Checklist)
-        //        .WithMany(w => w.CheckListPoints)
-        //        .WillCascadeOnDelete(false);
-        //}
     }
 }

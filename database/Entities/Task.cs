@@ -19,6 +19,7 @@ namespace database.Entities
         public virtual Project Project { get; set; }
         public virtual List<TaskAttachment> TaskAttachments { get; set; }
         public virtual CheckList CheckList { get; set; }
+        public virtual List<TaskComment> TaskComments { get; set; }
         
 
         public enum TaskStatus

@@ -17,5 +17,7 @@ namespace database.Entities
         public virtual List<Project> Projects { get; set; }
         public virtual List<Permission> Permissions { get; set; }
         public virtual List<UserPermission> UserPermissions { get; set; }
+        public virtual List<Group> Groups { get; set; }
+        public virtual List<TaskComment> TaskComments { get; set; }
     }
 }

@@ -48,10 +48,14 @@
   <ItemGroup>
     <Compile Include="Entities\CheckList.cs" />
     <Compile Include="Entities\CheckListPoint.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Label.cs" />
+    <Compile Include="Entities\Module.cs" />
     <Compile Include="Entities\Permission.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Task.cs" />
     <Compile Include="Entities\TaskAttachment.cs" />
+    <Compile Include="Entities\TaskComment.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserPermission.cs" />
     <Compile Include="Model1.cs" />
@@ -64,7 +68,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,3 +10,15 @@ D:\Projects\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\TaskShelf\database\obj\Debug\database.csprojResolveAssemblyReference.cache
 D:\Projects\TaskShelf\database\obj\Debug\database.dll
 D:\Projects\TaskShelf\database\obj\Debug\database.pdb
+E:\Projekt2\TaskShelf\database\bin\Debug\database.dll.config
+E:\Projekt2\TaskShelf\database\bin\Debug\database.dll
+E:\Projekt2\TaskShelf\database\bin\Debug\database.pdb
+E:\Projekt2\TaskShelf\database\bin\Debug\core.dll
+E:\Projekt2\TaskShelf\database\bin\Debug\EntityFramework.dll
+E:\Projekt2\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projekt2\TaskShelf\database\bin\Debug\core.pdb
+E:\Projekt2\TaskShelf\database\bin\Debug\EntityFramework.xml
+E:\Projekt2\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projekt2\TaskShelf\database\obj\Debug\database.csprojResolveAssemblyReference.cache
+E:\Projekt2\TaskShelf\database\obj\Debug\database.dll
+E:\Projekt2\TaskShelf\database\obj\Debug\database.pdb
