@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace tests
 {
@@ -34,6 +33,7 @@ namespace tests
             ////To jest dobrze tworzy od strony listy
             //var project = new Project();
             //project.Name = "Testowy";
+            //project,
             //project.Labels = new List<Label>
             //{
             //    new Label
@@ -43,9 +43,16 @@ namespace tests
             //};
             //model.Set<Project>().Add(project);
             //model.SaveChanges();
+
             var project = new Project();
             project.Name = "test";            
             model.Set<Project>().Add(project);
+            model.SaveChanges();
+
+            user.Projects = new List<Project>
+            {
+                project
+            };
             model.SaveChanges();
 
             var label = new Label();
@@ -54,12 +61,20 @@ namespace tests
             model.Set<Label>().Add(label);
             model.SaveChanges();
 
-
-            user.Projects = new List<Project>
-            {
-                project
-            };
+            var task = new Task();
+            task.Name = "Błąd wyszukiwarki";
+            task.Status = Task.TaskStatus.Open;
+            task.Type = Task.TaskType.Error;
+            task.CreateDate = DateTime.Now;
+            task.ExpectedWorkTime = 8;
+            task.Project = project;
+            model.Set<Task>().Add(task);
             model.SaveChanges();
+
+            
+         
+            
+           
           
         }
 

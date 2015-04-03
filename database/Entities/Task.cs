@@ -12,7 +12,7 @@ namespace database.Entities
         public string Name { get; set; }
         public DateTime CreateDate { get; set; }
         public int ExpectedWorkTime { get; set; }
-        public DateTime CompletedDate { get; set; }
+        public DateTime? CompletedDate { get; set; }
         public TaskStatus Status { get; set; }
         public TaskType Type { get; set; }
 
