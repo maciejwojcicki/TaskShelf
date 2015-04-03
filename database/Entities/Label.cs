@@ -12,5 +12,6 @@ namespace database.Entities
         public string Name { get; set; }
 
         public virtual Project Project { get; set; }
+        public virtual Task Task { get; set; }
     }
 }

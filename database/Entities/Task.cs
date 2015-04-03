@@ -20,6 +20,7 @@ namespace database.Entities
         public virtual List<TaskAttachment> TaskAttachments { get; set; }
         public virtual CheckList CheckList { get; set; }
         public virtual List<TaskComment> TaskComments { get; set; }
+        public virtual List<Label> Labels { get; set; }
         
 
         public enum TaskStatus

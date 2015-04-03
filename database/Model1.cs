@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace database
 {
@@ -93,17 +92,21 @@ namespace database
         }
         private void ConfigureTask(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<database.Entities.Task>()
+            modelBuilder.Entity<Task>()
                 .HasKey(h => h.TaskId)
                 .HasOptional(h => h.CheckList)
                 .WithRequired(w => w.Task)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<database.Entities.Task>()
+            modelBuilder.Entity<Task>()
                 .HasMany(h => h.TaskComments)
                 .WithRequired(w => w.Task)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Task>()
+                .HasMany(h => h.Labels)
+                .WithRequired(w => w.Task)
+                .WillCascadeOnDelete(false);
         }
         private void ConfigureCheckList(DbModelBuilder modelBuilder)
         {
