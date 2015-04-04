@@ -11,6 +11,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using implementations.Exceptions;
+using System.Security.Principal;
 
 namespace implementations.Services
 {
@@ -58,6 +59,25 @@ namespace implementations.Services
             int userId = user.UserId;
 
             return userId;
+        }
+
+        public IPrincipal GetPrincipal(int userId)
+        {
+            var user = context.Set<User>()
+                .AsQueryable()
+                .Where(w => w.UserId == userId)
+                .Include(i => i.Permissions)
+                .SingleOrDefault();
+
+            if (user == null)
+            {
+                throw new NotFoundException();
+            }
+
+            string[] roles = user.Permissions.OfType<Permission>().Select(p => p.Name.ToString()).ToArray();
+            return new GenericPrincipal(
+                new GenericIdentity(user.UserId.ToString()),
+                roles);
         }
     }
 }

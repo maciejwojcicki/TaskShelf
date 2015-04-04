@@ -34,3 +34,6 @@ D:\github\TaskShelf\implementations\bin\Debug\database.pdb
 D:\github\TaskShelf\implementations\bin\Debug\EntityFramework.xml
 D:\github\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.xml
 D:\github\TaskShelf\implementations\obj\Debug\implementations.pdb
+E:\Projekt2\TaskShelf\implementations\bin\Debug\implementations.dll.config
+E:\Projekt2\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projekt2\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.xml

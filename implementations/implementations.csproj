@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\AccountNotActivatedException.cs" />
     <Compile Include="Exceptions\InvalidLoginPasswordException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\PermissionException.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
