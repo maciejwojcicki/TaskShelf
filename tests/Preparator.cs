@@ -14,35 +14,22 @@ namespace tests
             var user = new User();
             user.Login = "mkasprzak";
             user.Name = "Mateuszek";
-            user.Password = "admin1";
+            user.Password = "7c4a8d09ca3762af61e59520943dc26494f8941b".ToUpper();
             user.Email = "mkasp@p.pl";
             model.Set<User>().Add(user);
             model.SaveChanges();
 
-            ////To jest dobrze tworzy projekt od striny elementu
-            //var label1 = new Label();
-            //label1.Name = "Test";
-            //label1.Project = new Project
-            //{
-            //    Name = "taks"
-            //};
-            //model.Set<Label>().Add(label1);
-            //model.SaveChanges();
+            var permission = new Permission();
+            permission.Value = Permission.PermissionList.CanLogin;
+            permission.Name = Permission.PermissionList.CanLogin.ToString("g");
+            model.Set<Permission>().Add(permission);
+            model.SaveChanges();
 
-
-            ////To jest dobrze tworzy od strony listy
-            //var project = new Project();
-            //project.Name = "Testowy";
-            //project,
-            //project.Labels = new List<Label>
-            //{
-            //    new Label
-            //    {
-            //        Name="alosza"
-            //    }
-            //};
-            //model.Set<Project>().Add(project);
-            //model.SaveChanges();
+            user.Permissions = new List<Permission>
+            {
+                permission
+            };
+            model.SaveChanges();
 
             var project = new Project();
             project.Name = "test";            
@@ -55,12 +42,6 @@ namespace tests
             };
             model.SaveChanges();
 
-            var label = new Label();
-            label.Name = "test";
-            label.Project = project;
-            model.Set<Label>().Add(label);
-            model.SaveChanges();
-
             var task = new Task();
             task.Name = "Błąd wyszukiwarki";
             task.Status = Task.TaskStatus.Open;
@@ -71,7 +52,12 @@ namespace tests
             model.Set<Task>().Add(task);
             model.SaveChanges();
 
-            
+            var label = new Label();
+            label.Name = "test";
+            label.Project = project;
+            label.Task = task;
+            model.Set<Label>().Add(label);
+            model.SaveChanges();
          
             
            

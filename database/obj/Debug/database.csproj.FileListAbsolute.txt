@@ -22,3 +22,15 @@ E:\Projekt2\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projekt2\TaskShelf\database\obj\Debug\database.csprojResolveAssemblyReference.cache
 E:\Projekt2\TaskShelf\database\obj\Debug\database.dll
 E:\Projekt2\TaskShelf\database\obj\Debug\database.pdb
+D:\github\TaskShelf\database\bin\Debug\database.dll.config
+D:\github\TaskShelf\database\bin\Debug\database.dll
+D:\github\TaskShelf\database\bin\Debug\database.pdb
+D:\github\TaskShelf\database\bin\Debug\core.dll
+D:\github\TaskShelf\database\bin\Debug\EntityFramework.dll
+D:\github\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.dll
+D:\github\TaskShelf\database\bin\Debug\core.pdb
+D:\github\TaskShelf\database\bin\Debug\EntityFramework.xml
+D:\github\TaskShelf\database\bin\Debug\EntityFramework.SqlServer.xml
+D:\github\TaskShelf\database\obj\Debug\database.csprojResolveAssemblyReference.cache
+D:\github\TaskShelf\database\obj\Debug\database.dll
+D:\github\TaskShelf\database\obj\Debug\database.pdb
