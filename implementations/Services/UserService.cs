@@ -79,5 +79,26 @@ namespace implementations.Services
                 new GenericIdentity(user.UserId.ToString()),
                 roles);
         }
+
+        public void Register (RegisterModel model)
+        {
+            ModelUtils.Validate(model);
+
+            if( context.Set<User>().Where(w => w.Login == model.Login)!=null)
+            {
+                throw new LoginInUseException();
+            }
+            
+
+            var user = new User();
+            user.Login = model.Login;
+            user.Name = model.Name;
+            user.Password = model.Password;
+            user.Email = model.Email;
+            user.ActivationToken = model.ActivationToken;
+            context.Set<User>().Add(user);
+            context.SaveChanges();
+            
+        }
     }
 }
