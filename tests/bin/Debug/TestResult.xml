@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="E:\Projekt2\TaskShelf\tests\bin\Debug\tests.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-08" time="19:19:36">
+<test-results name="E:\Projekt2\TaskShelf\tests\bin\Debug\tests.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-14" time="20:17:54">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="E:\Program Files\NUnit 2.6.4\bin" machine-name="DEITH" user="Fatal" user-domain="Deith" />
   <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
-  <test-suite type="Assembly" name="E:\Projekt2\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Success" success="True" time="7.738" asserts="0">
+  <test-suite type="Assembly" name="E:\Projekt2\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Success" success="True" time="7.011" asserts="0">
     <results>
-      <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="7.730" asserts="0">
+      <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="7.004" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="DbTest" executed="True" result="Success" success="True" time="7.728" asserts="0">
+          <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Success" success="True" time="7.003" asserts="0">
             <results>
-              <test-case name="tests.DbTest.TestDateTest" executed="True" result="Success" success="True" time="7.715" asserts="0" />
+              <test-case name="tests.UserServiceTests.RegisterLoginTest" executed="True" result="Success" success="True" time="6.997" asserts="0" />
             </results>
           </test-suite>
         </results>

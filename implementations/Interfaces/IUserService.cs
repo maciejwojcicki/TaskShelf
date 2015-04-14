@@ -12,5 +12,6 @@ namespace implementations.Interfaces
     {
         int Login(LoginModel model);
         IPrincipal GetPrincipal(int userId);
+        void Register(RegisterModel model);
     }
 }

@@ -84,7 +84,7 @@ namespace implementations.Services
         {
             ModelUtils.Validate(model);
 
-            if( context.Set<User>().Where(w => w.Login == model.Login)!=null)
+            if( context.Set<User>().Where(w => w.Login.ToLower() == model.Login.ToLower()).Count()>0)
             {
                 throw new LoginInUseException();
             }
