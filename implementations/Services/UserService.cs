@@ -80,6 +80,18 @@ namespace implementations.Services
                 roles);
         }
 
+        public User GetCurrentUser(IPrincipal currentPrincipal)
+        {
+            User user = null;
+            int userId = 0;
+            if (currentPrincipal != null && currentPrincipal.Identity != null && int.TryParse(currentPrincipal.Identity.Name, out userId))
+            {
+                user = context.Set<User>().Where(i => i.UserId == userId).Single();
+            }
+            return user;
+        }
+          
+
         public void Register (RegisterModel model)
         {
             ModelUtils.Validate(model);
@@ -93,7 +105,7 @@ namespace implementations.Services
             var user = new User();
             user.Login = model.Login;
             user.Name = model.Name;
-            user.Password = model.Password;
+            user.Password = UserUtils.PasswordHash(model.Password);
             user.Email = model.Email;
             user.ActivationToken = model.ActivationToken;
             context.Set<User>().Add(user);
