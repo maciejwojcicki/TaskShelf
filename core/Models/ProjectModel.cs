@@ -9,7 +9,6 @@ namespace core.Models
 {
     public class ProjectModel
     {
-        [Required]
-        public string Name { get; set; }
+       public List<database.Entities.Project> Projects { get; set; }
     }
 }

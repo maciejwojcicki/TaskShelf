@@ -13,3 +13,7 @@ E:\Projekt2\TaskShelf\core\bin\Debug\core.pdb
 E:\Projekt2\TaskShelf\core\obj\Debug\core.dll
 E:\Projekt2\TaskShelf\core\obj\Debug\core.pdb
 E:\Projekt2\TaskShelf\core\obj\Debug\core.csprojResolveAssemblyReference.cache
+E:\Projekt2\TaskShelf\core\bin\Debug\database.dll
+E:\Projekt2\TaskShelf\core\bin\Debug\EntityFramework.dll
+E:\Projekt2\TaskShelf\core\bin\Debug\database.pdb
+E:\Projekt2\TaskShelf\core\bin\Debug\EntityFramework.xml

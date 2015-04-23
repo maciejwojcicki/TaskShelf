@@ -34,10 +34,9 @@ namespace implementations.Services
            
             var hash = UserUtils.PasswordHash(model.Password);
 
-            var user = context.Set<User>()
-                .AsQueryable()       
+            var user = context.Set<User>()    
                 .Where(w => w.Login == model.Login && w.Password == hash)
-                .Include(i => i.Permissions)               
+                //.Include(i => i.Permissions)               
                 .SingleOrDefault();    
                 
             if (user == null)
@@ -50,11 +49,11 @@ namespace implementations.Services
                 throw new AccountNotActivatedException();
             }
 
-            if (user.Permissions.Select(p => p.Value)
-                .Contains(Permission.PermissionList.CanLogin) == false)
-            {
-                throw new PermissionException(Permission.PermissionList.CanLogin);
-            }
+            //if (user.Permissions.Select(p => p.Value)
+            //    .Contains(Permission.PermissionList.CanLogin) == false)
+            //{
+            //    throw new PermissionException(Permission.PermissionList.CanLogin);
+            //}
 
             int userId = user.UserId;
 
@@ -64,9 +63,9 @@ namespace implementations.Services
         public IPrincipal GetPrincipal(int userId)
         {
             var user = context.Set<User>()
-                .AsQueryable()
+                //.AsQueryable()
                 .Where(w => w.UserId == userId)
-                .Include(i => i.Permissions)
+                //.Include(i => i.Permissions)
                 .SingleOrDefault();
 
             if (user == null)
@@ -74,7 +73,8 @@ namespace implementations.Services
                 throw new NotFoundException();
             }
 
-            string[] roles = user.Permissions.OfType<Permission>().Select(p => p.Name.ToString()).ToArray();
+            //string[] roles = user.Permissions.OfType<Permission>().Select(p => p.Name.ToString()).ToArray();
+            string[] roles = { "test" };
             return new GenericPrincipal(
                 new GenericIdentity(user.UserId.ToString()),
                 roles);
@@ -109,6 +109,14 @@ namespace implementations.Services
             user.Email = model.Email;
             user.ActivationToken = model.ActivationToken;
             context.Set<User>().Add(user);
+            context.SaveChanges();
+
+            //user.Permissions = new List<Permission>
+            //{
+            //    context.Set<Permission>()
+            //    .Single(p=>p.Name == "CanLogin")
+
+            //};
             context.SaveChanges();
             
         }

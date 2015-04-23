@@ -1,4 +1,5 @@
-﻿using database;
+﻿using core.Models;
+using database;
 using database.Entities;
 using implementations.Exceptions;
 using implementations.Interfaces;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace implementations.Services
 {
-    public class ProjectService:IProjectService
+    public class ProjectService : IProjectService
     {
         private Model1 context;
         public ProjectService()
@@ -24,7 +25,7 @@ namespace implementations.Services
                 Console.WriteLine(text);
             };
         }
-        public IEnumerable<Project> GetProjects(IPrincipal currentPrincipal)
+        public List<Project> GetProjects(IPrincipal currentPrincipal, ProjectModel model)
         {
             UserService userService = new UserService();
             User user = userService.GetCurrentUser(currentPrincipal);
@@ -33,10 +34,11 @@ namespace implementations.Services
                 throw new NotLoggedInException();
             }
 
-            var projects = context.Set<Project>()
-                .Where(w => w.Users.Select(p=>p.UserId).Equals(user.UserId));
 
-            return projects;
+            model.Projects = context.Set<Project>()
+                .Where(w => w.Users.Contains(user)).ToList();
+
+            return model.Projects.ToList();
         }
     }
 }
