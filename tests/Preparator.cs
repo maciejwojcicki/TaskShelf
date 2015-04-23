@@ -11,6 +11,7 @@ namespace tests
     {
         public static void CreateUserAndProject (Model1 model)
         {
+            //uzytkownik
             var user = new User();
             user.Login = "mkasprzak";
             user.Name = "Mateuszek";
@@ -19,27 +20,39 @@ namespace tests
             model.Set<User>().Add(user);
             model.SaveChanges();
 
+            //uprawnienie
             var permission = new Permission();
-            permission.Value = Permission.PermissionList.CanLogin;
-            permission.Name = Permission.PermissionList.CanLogin.ToString("g");
+            permission.Value = Permission.PermissionList.CanCreate;
+            permission.Name = Permission.PermissionList.CanCreate.ToString();
             model.Set<Permission>().Add(permission);
             model.SaveChanges();
 
-            user.Permissions = new List<Permission>
-            {
-                permission
-            };
-            model.SaveChanges();
-
+            //user.Permissions = new List<Permission>
+            //{
+            //    permission
+            //};
+            //model.SaveChanges();
+            //Projekt
             var project = new Project();
             project.Name = "test";            
             model.Set<Project>().Add(project);
             model.SaveChanges();
-
+            
+            //Rekord Uzytkownik_Projekt
             user.Projects = new List<Project>
             {
                 project
             };
+            model.SaveChanges();
+
+            var userPermission = new UserPermission()
+            {
+                
+                Permission = permission,
+                Project = project,
+                User = user
+            };
+            model.Set<UserPermission>().Add(userPermission);
             model.SaveChanges();
 
             var task = new Task();

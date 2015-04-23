@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace implementations.Exceptions
 {
-    class AccountNotActivatedException : Exception 
+    public class AccountNotActivatedException : Exception 
     {
     }
 }
