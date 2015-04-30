@@ -11,6 +11,6 @@ namespace implementations.Interfaces
 {
     public interface IProjectService
     {
-        List<Project> GetProjects(IPrincipal currentPrincipal, ProjectModel model);
+        List<Project> GetProjects(IPrincipal currentPrincipal);
     }
 }

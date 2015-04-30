@@ -25,7 +25,7 @@ namespace implementations.Services
                 Console.WriteLine(text);
             };
         }
-        public List<Project> GetProjects(IPrincipal currentPrincipal, ProjectModel model)
+        public List<Project> GetProjects(IPrincipal currentPrincipal)
         {
             UserService userService = new UserService();
             User user = userService.GetCurrentUser(currentPrincipal);
@@ -34,11 +34,11 @@ namespace implementations.Services
                 throw new NotLoggedInException();
             }
 
-
+            ProjectModel model = new ProjectModel();
             model.Projects = context.Set<Project>()
-                .Where(w => w.Users.Contains(user)).ToList();
+                .Where(w => w.Users.Select(s=>s.UserId).Contains(user.UserId)).ToList();
 
-            return model.Projects.ToList();
+            return model.Projects;
         }
     }
 }

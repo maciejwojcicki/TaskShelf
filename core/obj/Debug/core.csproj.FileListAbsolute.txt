@@ -17,3 +17,7 @@ E:\Projekt2\TaskShelf\core\bin\Debug\database.dll
 E:\Projekt2\TaskShelf\core\bin\Debug\EntityFramework.dll
 E:\Projekt2\TaskShelf\core\bin\Debug\database.pdb
 E:\Projekt2\TaskShelf\core\bin\Debug\EntityFramework.xml
+D:\github\TaskShelf\core\bin\Debug\database.dll
+D:\github\TaskShelf\core\bin\Debug\EntityFramework.dll
+D:\github\TaskShelf\core\bin\Debug\database.pdb
+D:\github\TaskShelf\core\bin\Debug\EntityFramework.xml
