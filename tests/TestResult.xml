@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\github\TaskShelf\tests\project1.nunit" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-04" time="15:43:02">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="STACJONARNY" user="mike0_000" user-domain="STACJONARNY" />
+<test-results name="E:\Projects\TaskShelf\tests\project1.nunit" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-08" time="21:31:34">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="E:\NUnit 2.6.4\bin" machine-name="ADMIN" user="Adm" user-domain="ADMIN" />
   <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
-  <test-suite type="Project" name="D:\github\TaskShelf\tests\project1.nunit" executed="True" result="Failure" success="False" time="1.782" asserts="0">
+  <test-suite type="Project" name="E:\Projects\TaskShelf\tests\project1.nunit" executed="True" result="Failure" success="False" time="0.545" asserts="0">
     <results>
-      <test-suite type="Assembly" name="D:\github\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Failure" success="False" time="1.746" asserts="0">
+      <test-suite type="Assembly" name="E:\Projects\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Failure" success="False" time="0.533" asserts="0">
         <results>
-          <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="1.746" asserts="0">
+          <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="0.533" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Failure" success="False" time="1.743" asserts="0">
+              <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Failure" success="False" time="0.531" asserts="0">
                 <results>
-                  <test-case name="tests.UserServiceTests.AdminLogin" executed="True" result="Error" success="False" time="1.718" asserts="0">
+                  <test-case name="tests.UserServiceTests.AdminLogin" executed="True" result="Error" success="False" time="0.523" asserts="0">
                     <failure>
                       <message><![CDATA[System.InvalidOperationException : No connection string named 'Model1' could be found in the application config file.]]></message>
                       <stack-trace><![CDATA[w System.Data.Entity.Internal.LazyInternalConnection.Initialize()
 w System.Data.Entity.Internal.LazyInternalConnection.get_Connection()
 w System.Data.Entity.Database.Delete()
-w tests.UserServiceTests.PrepareTest() w d:\github\TaskShelf\tests\UserServiceTests.cs:wiersz 23
-w tests.UserServiceTests.AdminLogin() w d:\github\TaskShelf\tests\UserServiceTests.cs:wiersz 32
+w tests.UserServiceTests.PrepareTest() w e:\Projects\TaskShelf\tests\UserServiceTests.cs:wiersz 24
+w tests.UserServiceTests.AdminLogin() w e:\Projects\TaskShelf\tests\UserServiceTests.cs:wiersz 33
 ]]></stack-trace>
                     </failure>
                   </test-case>
