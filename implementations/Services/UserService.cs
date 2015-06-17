@@ -117,7 +117,6 @@ namespace implementations.Services
             //    .Single(p=>p.Name == "CanLogin")
 
             //};
-            context.SaveChanges();
             
         }
     }

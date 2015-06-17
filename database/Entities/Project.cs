@@ -8,8 +8,13 @@ namespace database.Entities
 {
     public class Project
     {
+        public Project()
+        {
+            Users = new List<User>();
+        }
         public int ProjectId { get; set; }
         public string Name { get; set; }
+        public string ImageThumbnail { get; set; }
 
         public virtual List<User> Users { get; set; }
         public virtual List<Task> Tasks { get; set; }
