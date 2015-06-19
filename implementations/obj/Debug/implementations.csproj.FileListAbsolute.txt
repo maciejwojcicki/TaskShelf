@@ -37,3 +37,17 @@ E:\Projekt2\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projekt2\TaskShelf\implementations\obj\Debug\implementations.csprojResolveAssemblyReference.cache
 E:\Projekt2\TaskShelf\implementations\obj\Debug\implementations.dll
 E:\Projekt2\TaskShelf\implementations\obj\Debug\implementations.pdb
+D:\Projekty\TaskShelf\implementations\bin\Debug\implementations.dll.config
+D:\Projekty\TaskShelf\implementations\bin\Debug\implementations.dll
+D:\Projekty\TaskShelf\implementations\bin\Debug\implementations.pdb
+D:\Projekty\TaskShelf\implementations\bin\Debug\core.dll
+D:\Projekty\TaskShelf\implementations\bin\Debug\database.dll
+D:\Projekty\TaskShelf\implementations\bin\Debug\EntityFramework.dll
+D:\Projekty\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projekty\TaskShelf\implementations\bin\Debug\core.pdb
+D:\Projekty\TaskShelf\implementations\bin\Debug\database.pdb
+D:\Projekty\TaskShelf\implementations\bin\Debug\EntityFramework.xml
+D:\Projekty\TaskShelf\implementations\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projekty\TaskShelf\implementations\obj\Debug\implementations.csprojResolveAssemblyReference.cache
+D:\Projekty\TaskShelf\implementations\obj\Debug\implementations.dll
+D:\Projekty\TaskShelf\implementations\obj\Debug\implementations.pdb

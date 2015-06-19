@@ -45,22 +45,29 @@ namespace implementations.Services
         }
         public void CreateProject(CreateProjectModel model, IPrincipal currentPrincipal)
         {
-            //ModelUtils.Validate(model);
+            var project = new Project();
+            project.Name = model.Name;
+            project.ImageThumbnail = model.Imagethumbnail;
+            context.Set<Project>().Add(project);
+            context.SaveChanges();
 
-            //var project = new Project();
-            //project.Name = model.Name;
-            //project.ImageThumbnail = model.Imagethumbnail;
+            User CuurentUser = userService.GetCurrentUser(currentPrincipal);
+            var user = context.Set<User>().FirstOrDefault(p => p.UserId == CuurentUser.UserId);
+            
+            var userr = new User();
+            userr.Login = "darek";
+            userr.Name = "darek";
+            userr.Password = "12334";
+            userr.Email = "p2@p.pl";
+            context.Set<User>().Add(userr);
+            context.SaveChanges();
 
-            //context.Set<Project>().Add(project);
-            //context.SaveChanges();
 
-            //User user = userService.GetCurrentUser(currentPrincipal);
-            //user.Projects = new List<Project>
-            //{
-
-            //};
-            //context.Set<User>().(user);
-            //context.SaveChanges();
+            user.Projects = new List<Project>
+            {
+                project
+            };
+            context.SaveChanges();
         }
     }
 }

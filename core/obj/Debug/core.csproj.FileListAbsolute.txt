@@ -21,3 +21,12 @@ D:\github\TaskShelf\core\bin\Debug\database.dll
 D:\github\TaskShelf\core\bin\Debug\EntityFramework.dll
 D:\github\TaskShelf\core\bin\Debug\database.pdb
 D:\github\TaskShelf\core\bin\Debug\EntityFramework.xml
+D:\Projekty\TaskShelf\core\bin\Debug\core.dll
+D:\Projekty\TaskShelf\core\bin\Debug\core.pdb
+D:\Projekty\TaskShelf\core\bin\Debug\database.dll
+D:\Projekty\TaskShelf\core\bin\Debug\EntityFramework.dll
+D:\Projekty\TaskShelf\core\bin\Debug\database.pdb
+D:\Projekty\TaskShelf\core\bin\Debug\EntityFramework.xml
+D:\Projekty\TaskShelf\core\obj\Debug\core.csprojResolveAssemblyReference.cache
+D:\Projekty\TaskShelf\core\obj\Debug\core.dll
+D:\Projekty\TaskShelf\core\obj\Debug\core.pdb
