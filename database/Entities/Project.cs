@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace database.Entities
         public Project()
         {
             Users = new List<User>();
+            Tasks = new List<Task>();
         }
         public int ProjectId { get; set; }
+        [Required]
         public string Name { get; set; }
         public string ImageThumbnail { get; set; }
 

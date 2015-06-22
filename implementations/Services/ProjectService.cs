@@ -28,7 +28,7 @@ namespace implementations.Services
             };
             userService = new UserService();
         }
-        public List<Project> GetProjects(IPrincipal currentPrincipal)
+        public List<ProjectModel> GetProjects(IPrincipal currentPrincipal)
         {
 
             User user = userService.GetCurrentUser(currentPrincipal);
@@ -36,15 +36,26 @@ namespace implementations.Services
             {
                 throw new NotLoggedInException();
             }
+            ProjectModel a = new ProjectModel();
+            //z dupy zapytanie do przerobienia!
 
-            ProjectModel model = new ProjectModel();
-            model.Projects = context.Set<Project>()
-                .Where(w => w.Users.Select(s=>s.UserId).Contains(user.UserId)).ToList();
+            //var test =  context.Set<Project>()
+            //    .Where(w => w.Users.Select(s=>s.UserId).Equals(user.UserId));
 
-            return model.Projects;
+            var zzz = from o in context.Set<Project>()
+                      from k in o.Users
+                      select new ProjectModel { Project = o };
+
+            return zzz.ToList() ;
         }
         public void CreateProject(CreateProjectModel model, IPrincipal currentPrincipal)
         {
+            var ProjectExist = context.Set<Project>().Where(p => p.Name.Equals(model.Name)).Count();
+            if(ProjectExist !=0)
+            {
+                throw new ProjectExist();
+            }
+
             var project = new Project();
             project.Name = model.Name;
             project.ImageThumbnail = model.Imagethumbnail;
@@ -52,16 +63,7 @@ namespace implementations.Services
             context.SaveChanges();
 
             User CuurentUser = userService.GetCurrentUser(currentPrincipal);
-            var user = context.Set<User>().FirstOrDefault(p => p.UserId == CuurentUser.UserId);
-            
-            var userr = new User();
-            userr.Login = "darek";
-            userr.Name = "darek";
-            userr.Password = "12334";
-            userr.Email = "p2@p.pl";
-            context.Set<User>().Add(userr);
-            context.SaveChanges();
-
+            var user = context.Set<User>().Single(p => p.UserId == CuurentUser.UserId);
 
             user.Projects = new List<Project>
             {

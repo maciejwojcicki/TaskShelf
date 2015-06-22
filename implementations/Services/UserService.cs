@@ -44,10 +44,10 @@ namespace implementations.Services
                 throw new InvalidLoginPasswordException();
             }
 
-            if (user.ActivationToken != null)
-            {
-                throw new AccountNotActivatedException();
-            }
+            //if (user.ActivationToken != null)
+            //{
+            //    throw new AccountNotActivatedException();
+            //}
 
             //if (user.Permissions.Select(p => p.Value)
             //    .Contains(Permission.PermissionList.CanLogin) == false)
