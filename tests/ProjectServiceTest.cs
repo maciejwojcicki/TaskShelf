@@ -51,6 +51,7 @@ namespace tests
             
              var zzz = from o in model.Set<Project>()
                        from k in o.Users
+                       where k.UserId == user.UserId
                        select new ProjectModel { Project = o };
 
         }

@@ -28,11 +28,11 @@ namespace implementations.Services
         {
             var CurrentProject = context.Set<Project>().Single(p => p.ProjectId == projectId);
 
-
-            TaskModel model = new TaskModel();
-            model.Tasks.Select(p => p.Project.ProjectId == CurrentProject.ProjectId);
             
-            return model.Tasks;
+      
+            var model = context.Set<Task>().Where(p=>p.Project.ProjectId.Equals(CurrentProject.ProjectId)).ToList();
+            
+            return model;
         }
     }
 }

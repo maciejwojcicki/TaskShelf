@@ -36,7 +36,6 @@ namespace implementations.Services
             {
                 throw new NotLoggedInException();
             }
-            ProjectModel a = new ProjectModel();
             //z dupy zapytanie do przerobienia!
 
             //var test =  context.Set<Project>()
@@ -44,6 +43,7 @@ namespace implementations.Services
 
             var zzz = from o in context.Set<Project>()
                       from k in o.Users
+                      where k.UserId.Equals(user.UserId)
                       select new ProjectModel { Project = o };
 
             return zzz.ToList() ;
@@ -62,8 +62,8 @@ namespace implementations.Services
             context.Set<Project>().Add(project);
             context.SaveChanges();
 
-            User CuurentUser = userService.GetCurrentUser(currentPrincipal);
-            var user = context.Set<User>().Single(p => p.UserId == CuurentUser.UserId);
+            User CurrentUser = userService.GetCurrentUser(currentPrincipal);
+            var user = context.Set<User>().Single(p => p.UserId == CurrentUser.UserId);
 
             user.Projects = new List<Project>
             {
