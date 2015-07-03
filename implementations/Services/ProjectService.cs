@@ -50,6 +50,8 @@ namespace implementations.Services
         }
         public void CreateProject(CreateProjectModel model, IPrincipal currentPrincipal)
         {
+            ModelUtils.Validate(model);
+
             var ProjectExist = context.Set<Project>().Where(p => p.Name.Equals(model.Name)).Count();
             if(ProjectExist !=0)
             {

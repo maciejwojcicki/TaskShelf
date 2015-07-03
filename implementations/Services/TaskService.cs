@@ -2,6 +2,7 @@
 using database;
 using database.Entities;
 using implementations.Interfaces;
+using implementations.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,23 @@ namespace implementations.Services
             var model = context.Set<Task>().Where(p=>p.Project.ProjectId.Equals(CurrentProject.ProjectId)).ToList();
             
             return model;
+        }
+
+        public void CreateTask(CreateTaskModel model,int projectId)
+        {
+            ModelUtils.Validate(model);
+
+            var project = context.Set<Project>().Single(p => p.ProjectId == projectId);
+
+            var task = new Task();
+            task.Name = model.Name;
+            task.CreateDate = DateTime.Now;
+            task.ExpectedWorkTime = 8;
+            task.Status = Task.TaskStatus.Open;
+            task.Type = Task.TaskType.Error;
+            task.Project = project;
+            context.Set<Task>().Add(task);
+            context.SaveChanges();
         }
     }
 }
