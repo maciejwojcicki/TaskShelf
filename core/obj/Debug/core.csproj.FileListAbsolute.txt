@@ -30,3 +30,12 @@ D:\Projekty\TaskShelf\core\bin\Debug\EntityFramework.xml
 D:\Projekty\TaskShelf\core\obj\Debug\core.dll
 D:\Projekty\TaskShelf\core\obj\Debug\core.pdb
 D:\Projekty\TaskShelf\core\obj\Debug\core.csprojResolveAssemblyReference.cache
+E:\Projects\TaskShelf\core\bin\Debug\core.dll
+E:\Projects\TaskShelf\core\bin\Debug\core.pdb
+E:\Projects\TaskShelf\core\bin\Debug\database.dll
+E:\Projects\TaskShelf\core\bin\Debug\EntityFramework.dll
+E:\Projects\TaskShelf\core\bin\Debug\database.pdb
+E:\Projects\TaskShelf\core\bin\Debug\EntityFramework.xml
+E:\Projects\TaskShelf\core\obj\Debug\core.csprojResolveAssemblyReference.cache
+E:\Projects\TaskShelf\core\obj\Debug\core.dll
+E:\Projects\TaskShelf\core\obj\Debug\core.pdb

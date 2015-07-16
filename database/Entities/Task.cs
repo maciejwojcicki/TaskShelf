@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,19 +24,22 @@ namespace database.Entities
         public virtual List<Label> Labels { get; set; }
         
 
-        public enum TaskStatus
+        public enum TaskStatus:int
         {
-            Open,
-            InProgress,
-            Completed
+            [Description("Otwarty")]
+            Open = 1,
+            [Description("W trakcie")]
+            InProgress = 2,
+            [Description("Zakończony")]
+            Completed = 3
         }
 
-        public enum TaskType
+        public enum TaskType:int
         {
-            Error,
-            Test,
-            Refactor,
-            Story
+            Error = 1,
+            Test = 2,
+            Refactor = 3,
+            Story = 4
         }
     }
 }

@@ -1,40 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\Projekty\TaskShelf\tests\bin\Debug\tests.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-22" time="11:52:21">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8000" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="STACJONARNY" user="Deith" user-domain="stacjonarny" />
+<test-results name="E:\Projects\TaskShelf\tests\bin\Debug\tests.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-07-04" time="13:17:04">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="E:\NUnit 2.6.4\bin" machine-name="ADMIN" user="Adm" user-domain="ADMIN" />
   <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
-  <test-suite type="Assembly" name="D:\Projekty\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Failure" success="False" time="14.106" asserts="0">
+  <test-suite type="Assembly" name="E:\Projects\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Success" success="True" time="4.302" asserts="0">
     <results>
-      <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="14.088" asserts="0">
+      <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="4.302" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="ProjectServiceTest" executed="True" result="Failure" success="False" time="14.086" asserts="0">
+          <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Success" success="True" time="4.302" asserts="0">
             <results>
-              <test-case name="tests.ProjectServiceTest.ProjectList" executed="True" result="Error" success="False" time="14.072" asserts="0">
-                <failure>
-                  <message><![CDATA[System.NotSupportedException : Unable to create a constant value of type 'database.Entities.User'. Only primitive types or enumeration types are supported in this context.]]></message>
-                  <stack-trace><![CDATA[w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.ConstantTranslator.TypedTranslate(ExpressionConverter parent, ConstantExpression linq)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
-w System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
-w System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
-w System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
-w System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
-w System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
-w System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
-w System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
-w System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
-w System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
-w System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-w System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-w tests.ProjectServiceTest.ProjectList() w d:\Projekty\TaskShelf\tests\ProjectServiceTest.cs:wiersz 65
-]]></stack-trace>
-                </failure>
-              </test-case>
+              <test-case name="tests.UserServiceTests.AdminLogin" executed="True" result="Success" success="True" time="4.301" asserts="1" />
             </results>
           </test-suite>
         </results>
