@@ -53,11 +53,13 @@
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\PermissionException.cs" />
     <Compile Include="Exceptions\ProjectExist.cs" />
+    <Compile Include="Interfaces\ILabelService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\NotLoggedInException.cs" />
+    <Compile Include="Services\LabelService.cs" />
     <Compile Include="Services\ProjectService.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\UserService.cs" />

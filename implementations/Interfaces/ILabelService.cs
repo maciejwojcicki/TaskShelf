@@ -9,6 +9,6 @@ namespace implementations.Interfaces
 {
     public interface ILabelService
     {
-        List<Label> GetLabels();
+        List<Label> GetLabel(int ProjectId, int TaskId);
     }
 }

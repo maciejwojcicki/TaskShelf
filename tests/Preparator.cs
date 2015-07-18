@@ -68,8 +68,13 @@ namespace tests
             var label = new Label();
             label.Name = "test";
             label.Project = project;
-            label.Task = task;
             model.Set<Label>().Add(label);
+            model.SaveChanges();
+
+            label.Tasks = new List<Task>
+            {
+                task
+            };
             model.SaveChanges();
          
             

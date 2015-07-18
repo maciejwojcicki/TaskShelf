@@ -36,10 +36,6 @@ namespace implementations.Services
             {
                 throw new NotLoggedInException();
             }
-            //z dupy zapytanie do przerobienia!
-
-            //var test =  context.Set<Project>()
-            //    .Where(w => w.Users.Select(s=>s.UserId).Equals(user.UserId));
 
             var zzz = from o in context.Set<Project>()
                       from k in o.Users

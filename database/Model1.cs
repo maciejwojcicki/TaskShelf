@@ -105,9 +105,11 @@ namespace database
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Task>()
+                .HasKey(h=>h.TaskId)
                 .HasMany(h => h.Labels)
-                .WithRequired(w => w.Task)
-                .WillCascadeOnDelete(false);
+                .WithMany(w => w.Tasks);
+                
+
         }
         private void ConfigureCheckList(DbModelBuilder modelBuilder)
         {
