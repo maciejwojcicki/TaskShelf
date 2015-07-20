@@ -44,13 +44,23 @@ namespace implementations.Services
 
             var task = new Task();
             task.Name = model.Name;
+            task.Description = model.Description;
             task.CreateDate = DateTime.Now;
-            task.ExpectedWorkTime = 8;
+            task.ExpectedWorkTime = model.ExpectedWorkTime;
             task.Status = Task.TaskStatus.Open;
-            task.Type = Task.TaskType.Error;
+            task.Type = model.Type;
             task.Project = project;
+            
             context.Set<Task>().Add(task);
             context.SaveChanges();
+            foreach (var item in model.Attachments)
+            {
+                item.Task = task;
+                context.Set<TaskAttachment>().Add(item);
+                context.SaveChanges();
+            }
+            
+            
         }
     }
 }

@@ -11,6 +11,7 @@ namespace database.Entities
     {
         public int TaskId { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public DateTime CreateDate { get; set; }
         public int ExpectedWorkTime { get; set; }
         public DateTime? CompletedDate { get; set; }
@@ -36,9 +37,13 @@ namespace database.Entities
 
         public enum TaskType:int
         {
+            [Description("Błąd")]
             Error = 1,
+            [Description("Test")]
             Test = 2,
+            [Description("Zadanie")]
             Refactor = 3,
+            [Description("Nowe wymaganie")]
             Story = 4
         }
     }

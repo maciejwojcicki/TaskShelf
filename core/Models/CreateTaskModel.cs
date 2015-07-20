@@ -10,9 +10,11 @@ namespace core.Models
     {
         [Required]
         public string Name { get; set; }
+        public string Description { get; set; }
         public DateTime CreateDate { get; set; }
         public int ExpectedWorkTime { get; set; }
         public database.Entities.Task.TaskStatus Status { get; set; }
         public database.Entities.Task.TaskType Type { get; set; }
+        public List<TaskAttachment> Attachments { get; set; }
     }
 }
