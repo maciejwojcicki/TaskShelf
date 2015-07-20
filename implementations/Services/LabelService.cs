@@ -23,15 +23,18 @@ namespace implementations.Services
                 Console.WriteLine(text);
             };
         }
-        public List<Label> GetLabel(int ProjectId, int TaskId)
+        public List<Label> GetLabel(int ProjectId)
         {
-            //var model = from x in context.Set<Label>()
-            //            where x.Project.ProjectId == ProjectId &&
-            //                  x.
-            //            select x;
-            //return model.ToList();
-            var model = new List<Label>();
-            return model;
+            var project = context.Set<Project>().Single(p=>p.ProjectId == ProjectId);
+                          
+            var model = from x in context.Set<Label>()
+                        where x.Project.ProjectId.Equals(project.ProjectId)
+                        select x;
+
+
+
+
+            return model.ToList();
         }
     }
 }
