@@ -1,4 +1,5 @@
-﻿using database.Entities;
+﻿using core.Models;
+using database.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace implementations.Interfaces
     public interface ILabelService
     {
         List<Label> GetLabel(int ProjectId);
+        void SaveLabel(CreateLabelModel model, int ProjectId);
     }
 }

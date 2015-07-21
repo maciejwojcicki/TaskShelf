@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CreateLabelModel.cs" />
     <Compile Include="Models\CreateProjectModel.cs" />
     <Compile Include="Models\CreateTaskModel.cs" />
     <Compile Include="Models\LoginModel.cs" />

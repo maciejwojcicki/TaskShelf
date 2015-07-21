@@ -15,7 +15,7 @@ namespace implementations.Services
     public class TaskService : ITaskService
     {
         private Model1 context;
-        ITaskService taskService = null;
+
         public TaskService()
         {
             this.context = new Model1();
@@ -28,38 +28,53 @@ namespace implementations.Services
         public List<Task> GetTasks(IPrincipal CurrentPrincipal, int projectId)
         {
             var CurrentProject = context.Set<Project>().Single(p => p.ProjectId == projectId);
-
-            
       
             var model = context.Set<Task>().Where(p=>p.Project.ProjectId.Equals(CurrentProject.ProjectId)).ToList();
             
             return model;
         }
 
-        public void CreateTask(CreateTaskModel model,int projectId)
+        public void SaveTask(CreateTaskModel model,int projectId)
         {
             ModelUtils.Validate(model);
 
-            var project = context.Set<Project>().Single(p => p.ProjectId == projectId);
-
-            var task = new Task();
-            task.Name = model.Name;
-            task.Description = model.Description;
-            task.CreateDate = DateTime.Now;
-            task.ExpectedWorkTime = model.ExpectedWorkTime;
-            task.Status = Task.TaskStatus.Open;
-            task.Type = model.Type;
-            task.Project = project;
-            
-            context.Set<Task>().Add(task);
-            context.SaveChanges();
-            foreach (var item in model.Attachments)
+            var CurrentProject = context.Set<Project>().Single(p => p.ProjectId == projectId);
+            if (model.TaskId == 0)
             {
-                item.Task = task;
-                context.Set<TaskAttachment>().Add(item);
+                var task = new Task();
+                task.Name = model.Name;
+                task.Description = model.Description;
+                task.CreateDate = DateTime.Now;
+                task.ExpectedWorkTime = model.ExpectedWorkTime;
+                task.Status = Task.TaskStatus.Open;
+                task.Type = model.Type;
+                task.Project = CurrentProject;
+
+                context.Set<Task>().Add(task);
                 context.SaveChanges();
+                foreach (var item in model.Attachments)
+                {
+                    item.Task = task;
+                    context.Set<TaskAttachment>().Add(item);
+                    context.SaveChanges();
+                }
             }
-            
+            else
+            {
+                var DbEntry = context.Set<Task>().Find(model.TaskId);
+                DbEntry.Name = model.Name;
+                DbEntry.Description = model.Description;
+                DbEntry.ExpectedWorkTime = model.ExpectedWorkTime;
+                DbEntry.Status = model.Status;
+                DbEntry.Type = model.Type;
+                foreach (var item in model.Attachments)
+                {
+                    item.Task = DbEntry;
+                    context.Set<TaskAttachment>().Add(item);
+                    context.SaveChanges();
+                }
+                    
+            }
             
         }
     }

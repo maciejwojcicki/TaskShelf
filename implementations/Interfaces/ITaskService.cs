@@ -11,6 +11,6 @@ namespace implementations.Interfaces
     public interface ITaskService
     {
         List<Task> GetTasks(IPrincipal CurrentPrincipal, int projectId);
-        void CreateTask(CreateTaskModel model,int projectId);
+        void SaveTask(CreateTaskModel model,int projectId);
     }
 }

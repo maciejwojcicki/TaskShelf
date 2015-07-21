@@ -1,6 +1,8 @@
-﻿using database;
+﻿using core.Models;
+using database;
 using database.Entities;
 using implementations.Interfaces;
+using implementations.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,16 +27,37 @@ namespace implementations.Services
         }
         public List<Label> GetLabel(int ProjectId)
         {
-            var project = context.Set<Project>().Single(p=>p.ProjectId == ProjectId);
+            var CurrentProject = context.Set<Project>().Single(p => p.ProjectId == ProjectId);
                           
             var model = from x in context.Set<Label>()
-                        where x.Project.ProjectId.Equals(project.ProjectId)
+                        where x.Project.ProjectId.Equals(CurrentProject.ProjectId)
                         select x;
 
-
-
-
             return model.ToList();
+        }
+
+        public void SaveLabel(CreateLabelModel model,int ProjectId)
+        {
+            ModelUtils.Validate(model);
+
+            var CurrentProject = context.Set<Project>().Single(p => p.ProjectId == ProjectId);
+
+            if (model.LabelId == 0)
+            {
+                var label = new Label();
+                label.Name = model.Name;
+                label.Project = CurrentProject;
+                context.Set<Label>().Add(label);
+                context.SaveChanges();
+            }
+            else
+            {
+                var dbEntry = context.Set<Label>().Find(model.LabelId);
+                dbEntry.Name = model.Name;
+                context.SaveChanges();
+            }
+            
+
         }
     }
 }
