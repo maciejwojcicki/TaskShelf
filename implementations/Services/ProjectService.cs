@@ -44,7 +44,7 @@ namespace implementations.Services
 
             return zzz.ToList() ;
         }
-        public void CreateProject(CreateProjectModel model, IPrincipal currentPrincipal)
+        public void SaveProject(CreateProjectModel model, IPrincipal currentPrincipal)
         {
             ModelUtils.Validate(model);
 
@@ -53,21 +53,30 @@ namespace implementations.Services
             {
                 throw new ProjectExist();
             }
-
-            var project = new Project();
-            project.Name = model.Name;
-            project.ImageThumbnail = model.Imagethumbnail;
-            context.Set<Project>().Add(project);
-            context.SaveChanges();
-
-            User CurrentUser = userService.GetCurrentUser(currentPrincipal);
-            var user = context.Set<User>().Single(p => p.UserId == CurrentUser.UserId);
-
-            user.Projects = new List<Project>
+            if (model.ProjectId == 0)
             {
-                project
-            };
-            context.SaveChanges();
+                var project = new Project();
+                project.Name = model.Name;
+                project.ImageThumbnail = model.Imagethumbnail;
+                context.Set<Project>().Add(project);
+                context.SaveChanges();
+
+                User CurrentUser = userService.GetCurrentUser(currentPrincipal);
+                var user = context.Set<User>().Single(p => p.UserId == CurrentUser.UserId);
+
+                user.Projects = new List<Project>
+                {
+                 project
+                };
+                context.SaveChanges();
+            }
+            else
+            {
+                var DbEntry = context.Set<Project>().Find(model.ProjectId);
+                DbEntry.Name = model.Name;
+                DbEntry.ImageThumbnail = model.Imagethumbnail;
+                context.SaveChanges();
+            }
         }
     }
 }

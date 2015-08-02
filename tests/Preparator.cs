@@ -66,7 +66,7 @@ namespace tests
             model.SaveChanges();
 
             var label = new Label();
-            label.Name = "test";
+            label.Name = "label";
             label.Project = project;
             model.Set<Label>().Add(label);
             model.SaveChanges();

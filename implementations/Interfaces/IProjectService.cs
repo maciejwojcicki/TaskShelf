@@ -12,6 +12,6 @@ namespace implementations.Interfaces
     public interface IProjectService
     {
         List<ProjectModel> GetProjects(IPrincipal currentPrincipal);
-        void CreateProject(CreateProjectModel model, IPrincipal currentPrincipal);  
+        void SaveProject(CreateProjectModel model, IPrincipal currentPrincipal);  
     }
 }
