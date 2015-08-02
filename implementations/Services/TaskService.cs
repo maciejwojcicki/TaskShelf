@@ -52,14 +52,14 @@ namespace implementations.Services
 
                 context.Set<Task>().Add(task);
                 context.SaveChanges();
-            var test = task.TaskId;
-            var select = context.Set<Task>().Find(task.TaskId);
-            var attachment = new TaskAttachment();
+                var test = task.TaskId;
+                var select = context.Set<Task>().Find(task.TaskId);
+                var attachment = new TaskAttachment();
                 foreach (var item in model.Attachments)
                 {
-                attachment.Task = select;
-                attachment.FileName = item.FileName;
-                context.Set<TaskAttachment>().Add(attachment);
+                    attachment.Task = select;
+                    attachment.FileName = item.FileName;
+                    context.Set<TaskAttachment>().Add(attachment);
                     context.SaveChanges();
 
                 }
