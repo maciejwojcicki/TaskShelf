@@ -55,13 +55,16 @@ namespace implementations.Services
                 var test = task.TaskId;
                 var select = context.Set<Task>().Find(task.TaskId);
                 var attachment = new TaskAttachment();
-                foreach (var item in model.Attachments)
-                {
-                    attachment.Task = select;
-                    attachment.FileName = item.FileName;
-                    context.Set<TaskAttachment>().Add(attachment);
-                    context.SaveChanges();
+                if (model.Attachments != null) 
+                { 
+                    foreach (var item in model.Attachments)
+                    {
+                        attachment.Task = select;
+                        attachment.FileName = item.FileName;
+                        context.Set<TaskAttachment>().Add(attachment);
+                        context.SaveChanges();
 
+                    }
                 }
             }
             else
@@ -72,13 +75,15 @@ namespace implementations.Services
                 DbEntry.ExpectedWorkTime = model.ExpectedWorkTime;
                 DbEntry.Status = model.Status;
                 DbEntry.Type = model.Type;
-                foreach (var item in model.Attachments)
-                {
-                    item.Task = DbEntry;
-                    context.Set<TaskAttachment>().Add(item);
-                    context.SaveChanges();
+                if (model.Attachments != null) 
+                { 
+                    foreach (var item in model.Attachments)
+                    {
+                        item.Task = DbEntry;
+                        context.Set<TaskAttachment>().Add(item);
+                        context.SaveChanges();
+                    }
                 }
-                    
             }
             
         }
